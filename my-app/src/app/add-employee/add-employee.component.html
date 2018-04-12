@@ -1,0 +1,213 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+input {
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+label {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+select{
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    margin-left: 50px;  
+}
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 800px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.stylefont
+{
+    font-size: medium;
+}
+</style>
+</head>
+
+
+
+<h2>Add Employee</h2>
+<form [formGroup]="employeeForm" (ngSubmit)="save()" style="padding-right:20px" >
+<div class="row">
+  <div class="column" >
+       
+     <label class="stylefont">First Name*</label><br>
+     <input type="Text" class="form-control" formControlName="FirstName" ><br>
+	 <label  class="stylefont">Last Name*</label><br>
+	 <input type="Text" class="form-control" formControlName="LastName"><br>
+	 <label  class="stylefont">Mobile Number*</label><br>
+	 <input type="number" class="form-control" formControlName="Mobileno"><br>
+	  <label  class="stylefont">Date Of Birth*</label><br>
+	 <input type="date" class="form-control" formControlName="DateofBirth"><br>
+	 <label  class="stylefont">Email*</label><br>
+	 <input type="email" class="form-control" formControlName="email"><br>
+	 <!-- <label class="form-control" formControlName="Gender">Gender*</label><br>
+	 <label>male</label>
+     <input type="radio">
+     <label>Female</label>
+     <input type="radio"><br> -->
+     <form >
+           <label  class="stylefont">Gender*</label>
+            <div>
+            
+              <input type="radio" id="contactChoice1"
+               name="male" value="male">
+               <label  class="stylefont" for="contactChoice1">Male</label>
+              <br>
+               <input type="radio" id="contactChoice2"
+               name="female" value="female">
+
+              <label  class="stylefont" for="contactChoice2">Female</label>
+             
+            </div>
+            </form>
+	 <label  class="stylefont">College*</label><br>
+	 <select class="form-control" formControlName="College">
+       <option >KLU</option>
+       <option >Vignan</option>
+       <option >Siddartha</option>
+       <option >VIT</option>
+     </select><br>
+	 <label  class="stylefont">Qualification*</label><br>
+	 <select class="form-control" formControlName="Qualification">
+       <option >10th</option>
+       <option >Inter</option>
+       <option >BTech</option>
+       <option >Degree</option>
+     </select ><br>
+	 <label  class="stylefont">Year Of Graduation*</label><br>
+	 <select class="form-control" formControlName="Yearofgraduates">
+       <option >2014</option>
+       <option >2015</option>
+       <option >2016</option>
+       <option >2017</option>
+     </select><br>
+  </div>
+  <div class="column" >
+      <label  class="stylefont">Branch*</label><br>
+	 <select class="form-control" formControlName="branch">
+       <option >SBI</option>
+       <option >SBH</option>
+       <option >ICICI</option>
+       <option >Andhra Bank</option>
+     </select><br>
+	 <label  class="stylefont">Date Of Joining*</label><br>
+	 <input type='date' class="form-control" formControlName="DateofJoining"><br>
+	 <label  class="stylefont">Stream*</label><br>
+	 <select class="form-control" formControlName="Technologies">
+       <option >.NEt</option>
+       <option >SQL</option>
+       <option >Angular</option>
+       <option >BI</option>
+     </select><br>
+	 <label  class="stylefont">Language*</label><br>
+	 <select class="form-control" formControlName="Language">
+       <option >Telugu</option>
+       <option >Hindi</option>
+       <option >English</option>
+       <option >Tamil</option>
+     </select><br>
+  </div>
+</div> 
+</form>
+<!--
+<form [formGroup]="employeeForm" (ngSubmit)="save()" style="padding-right:20px" >
+        <div class="row">
+            <div class="column">
+
+                <div class="form-group row">
+                    <label for="" class="col-md-4">First name</label>
+                    <div class="col-md-4" >
+                    <input type="text" class="form-control" formControlName="empId">
+                </div>
+                <div class="col-md-6"></div>
+    
+                <div class="form-group row">
+                    <label for="" class="col-md-12">Last name</label>
+                    <div class="col-md-4">
+                    <input type="text" class="form-control"formControlName="firstName" >
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-md-12">Mobileno</label>
+                    <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="lastname">
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-md-12">Date of birth</label>
+                    <div class="col-md-4">
+                    <input type="date" class="form-control" formControlName="active">
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-md-12">Email</label>
+                    <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="active">
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+            </div>
+            <div classs="column">
+
+                <div class="form-group row">
+                    <label for="" class="col-md-12">Gender</label>
+                    <div class="col-md-4">
+                    <input type="text" class="form-control"formControlName="active">
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-md-12">College</label>
+                    <div class="col-md-4">
+                    <input type="text" class="form-control"formControlName="active">
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-primary" value="Save" />
+                    </div>
+                </div>
+            </div>
+        </div>
+</form> -->
+
+</html>
+
+
+ 
+   
